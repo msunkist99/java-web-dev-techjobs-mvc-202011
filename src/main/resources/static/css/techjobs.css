@@ -29,12 +29,17 @@ table.job-listing {
     width: 80%;
 }
 
-table.job-listing td:first-child {
-    font-weight: bold;
+td:first-child {
+    font-weight: normal;
 }
 
 table.job-listing td:last-child {
     width: 80%;
+}
+
+.span-label {
+    font-weight: bold;
+    font-style: italic;
 }
 
 label {

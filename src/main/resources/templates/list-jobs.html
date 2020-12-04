@@ -14,17 +14,35 @@
     <table class="job-listing">
         <tr th:each="job : ${jobs}">
             <td>
-                <span th:text="'ID: ' + ${job.id}"></span>
+                <span>
+                    <span class="span-label">ID:</span>
+                    <span th:text="${job.id}"></span>
                 <br />
-                <span th:text="'Name: ' + ${job.name}"></span>
+                </span>
+                <span>
+                    <span class="span-label">Name:</span>
+                    <span th:text="${job.name}"></span>
+                </span>
                 <br />
-                <span th:text="'Employer: ' + ${job.employer}"></span>
+                <span>
+                    <span class="span-label">Employer:</span>
+                    <span th:text="${job.employer}"></span>
+                </span>
                 <br />
-                <span th:text="'Location: ' + ${job.location}"></span>
+                <span>
+                    <span class="span-label">Location:</span>
+                    <span th:text="${job.location}"></span>
+                </span>
                 <br />
-                <span th:text="'Position Type: ' + ${job.positionType}"></span>
+                <span>
+                    <span class="span-label">Position Type:</span>
+                    <span th:text="${job.positionType}"></span>
+                </span>
                 <br />
-                <span th:text="'Skill: ' + ${job.coreCompetency}"></span>
+                <span>
+                    <span class="span-label">Skill:</span>
+                    <span th:text="${job.coreCompetency}"></span>
+                </span>
                 <br />
             </td>
         </tr>
