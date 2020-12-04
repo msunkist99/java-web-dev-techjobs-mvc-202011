@@ -36,21 +36,40 @@
 
     <hr />
 
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <!-- TODO #4 - COMPLETE - Loop over the search results to display all job fields. -->
+    <!-- MMK --- this table code should really go in a FRAGMENT because the same code is used in list-job.html and search.html -->
     <table class="job-listing">
         <tr th:each="job : ${jobs}">
             <td>
-                <span th:text="'ID: ' + ${job.id}"></span>
+            <span>
+                <span class="span-label">ID:</span>
+                <span th:text="${job.id}"></span>
+            <br />
+            </span>
+                <span>
+                <span class="span-label">Name:</span>
+                <span th:text="${job.name}"></span>
+            </span>
                 <br />
-                <span th:text="'Name: ' + ${job.name}"></span>
+                <span>
+                <span class="span-label">Employer:</span>
+                <a th:href="@{/list/jobs(column='employer',     value=${job.employer})}" th:text="${job.employer}"></a>
+            </span>
                 <br />
-                <span th:text="'Employer: ' + ${job.employer}"></span>
+                <span>
+                <span class="span-label">Location:</span>
+                <a th:href="@{/list/jobs(column='location',     value=${job.location})}" th:text="${job.location}"></a>
+            </span>
                 <br />
-                <span th:text="'Location: ' + ${job.location}"></span>
+                <span>
+                <span class="span-label">Position Type:</span>
+                <a th:href="@{/list/jobs(column='positionType',     value=${job.positionType})}" th:text="${job.positionType}"></a>
+            </span>
                 <br />
-                <span th:text="'Position Type: ' + ${job.positionType}"></span>
-                <br />
-                <span th:text="'Skill: ' + ${job.coreCompetency}"></span>
+                <span>
+                <span class="span-label">Skill:</span>
+                <a th:href="@{/list/jobs(column='coreCompetency',     value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a>
+            </span>
                 <br />
             </td>
         </tr>

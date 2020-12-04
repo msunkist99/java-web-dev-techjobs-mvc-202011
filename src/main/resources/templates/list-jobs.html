@@ -11,42 +11,43 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - COMPLETE - Use a loop to display job results in a table. -->
-    <table class="job-listing">
-        <tr th:each="job : ${jobs}">
-            <td>
-                <span>
-                    <span class="span-label">ID:</span>
-                    <span th:text="${job.id}"></span>
-                <br />
-                </span>
-                <span>
-                    <span class="span-label">Name:</span>
-                    <span th:text="${job.name}"></span>
-                </span>
-                <br />
-                <span>
-                    <span class="span-label">Employer:</span>
-                    <span th:text="${job.employer}"></span>
-                </span>
-                <br />
-                <span>
-                    <span class="span-label">Location:</span>
-                    <span th:text="${job.location}"></span>
-                </span>
-                <br />
-                <span>
-                    <span class="span-label">Position Type:</span>
-                    <span th:text="${job.positionType}"></span>
-                </span>
-                <br />
-                <span>
-                    <span class="span-label">Skill:</span>
-                    <span th:text="${job.coreCompetency}"></span>
-                </span>
-                <br />
-            </td>
-        </tr>
-    </table>
+    <!-- MMK --- this table code should really go in a FRAGMENT because the same code is used in list-job.html and search.html -->
+<table class="job-listing">
+    <tr th:each="job : ${jobs}">
+        <td>
+            <span>
+                <span class="span-label">ID:</span>
+                <span th:text="${job.id}"></span>
+            <br />
+            </span>
+            <span>
+                <span class="span-label">Name:</span>
+                <span th:text="${job.name}"></span>
+            </span>
+            <br />
+            <span>
+                <span class="span-label">Employer:</span>
+                <a th:href="@{/list/jobs(column='employer',     value=${job.employer})}" th:text="${job.employer}"></a>
+            </span>
+            <br />
+            <span>
+                <span class="span-label">Location:</span>
+                <a th:href="@{/list/jobs(column='location',     value=${job.location})}" th:text="${job.location}"></a>
+            </span>
+            <br />
+            <span>
+                <span class="span-label">Position Type:</span>
+                <a th:href="@{/list/jobs(column='positionType',     value=${job.positionType})}" th:text="${job.positionType}"></a>
+            </span>
+            <br />
+            <span>
+                <span class="span-label">Skill:</span>
+                <a th:href="@{/list/jobs(column='coreCompetency',     value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a>
+            </span>
+            <br />
+        </td>
+    </tr>
+</table>
 </div>
 
 </body>
