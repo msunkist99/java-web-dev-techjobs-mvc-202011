@@ -56,10 +56,6 @@ public class JobData {
 
         ArrayList<Job> jobs = new ArrayList<>();
 
-        if (value.toLowerCase().equals("all")){
-            return findAll();
-        }
-
         if (column.equals("all")){
             jobs = findByValue(value);
             return jobs;
